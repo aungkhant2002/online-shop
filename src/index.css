@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.category-button-group::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.category-button-group {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
