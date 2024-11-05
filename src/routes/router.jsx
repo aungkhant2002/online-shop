@@ -4,11 +4,13 @@ import About from "../pages/About.jsx";
 import MyCart from "../pages/MyCart.jsx";
 import ProductDetail from "../pages/ProductDetail.jsx";
 import MainLayout from "../components/MainLayout.jsx";
+import ErrorPage from "../pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout/>,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: "/",
