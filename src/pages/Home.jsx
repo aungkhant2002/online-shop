@@ -1,5 +1,11 @@
+import CategorySection from "../components/CategorySection.jsx";
+import ProductSection from "../components/ProductSection.jsx";
+
 export default function Home() {
     return (
-        <div className="">Home Page</div>
+        <>
+            <CategorySection/>
+            <ProductSection/>
+        </>
     )
 }
