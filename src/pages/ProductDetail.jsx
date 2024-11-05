@@ -2,6 +2,7 @@ import {useParams} from "react-router-dom";
 import products from "../data/products.js";
 import Container from "../components/Container.jsx";
 import Rating from "../components/Rating.jsx";
+import BreadCrumb from "../components/BreadCrumb.jsx";
 
 export default function ProductDetail() {
     const {product_id} = useParams();
@@ -9,6 +10,7 @@ export default function ProductDetail() {
     return (
         <Container>
             <div className="px-5 pb-5">
+                <BreadCrumb currentPageTitle="Product Detail"></BreadCrumb>
                 <div className="border border-black p-5 ">
                     <div className="grid grid-cols-1 lg:grid-cols-2">
                         <div className="col-span-1">
