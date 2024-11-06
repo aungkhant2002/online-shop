@@ -14,7 +14,7 @@ export default function Cart({cart}) {
             </div>
             <div className="col-span-1">
                 <p className="mb-2 text-center">Quantity</p>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-center items-center gap-2">
                     <button className="border px-2 py-0.5 bg-black text-white">-</button>
                     {/* eslint-disable-next-line react/prop-types */}
                     <p className="">{cart.quantity}</p>

@@ -2,22 +2,10 @@ import products from "../data/products.js";
 import Cart from "./Cart.jsx";
 import Container from "./Container.jsx";
 import {Link} from "react-router-dom";
+import carts from "../data/cart.js";
 
 export default function CartSection() {
-    const carts = [
-        {
-            id: 1,
-            product: products[1],
-            quantity: 3,
-            cost: 66.9,
-        },
-        {
-            id: 2,
-            product: products[6],
-            quantity: 1,
-            cost: 9.99,
-        }
-    ]
+
     return (
         <>
             <div className="w-full flex flex-col gap-5 h-full">
