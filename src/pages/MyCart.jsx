@@ -4,7 +4,7 @@ import CartSection from "../components/CartSection.jsx";
 
 export default function MyCart() {
     return (
-        <Container>
+        <Container className="">
             <div className="p-5">
                 <BreadCrumb currentPageTitle="My Cart"></BreadCrumb>
                 <CartSection/>

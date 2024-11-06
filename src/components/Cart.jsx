@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
 export default function Cart({cart}) {
     return (
-        <div className="border border-black p-5 grid grid-cols-6 gap-5 items-center">
+        <div className="w-full border border-black p-5 grid grid-cols-6 gap-5 items-center">
             <div className="col-span-1">
                 {/* eslint-disable-next-line react/prop-types */}
                 <img src={cart.product.image} className="h-16" alt=""/>
