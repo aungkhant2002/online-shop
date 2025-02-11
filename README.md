@@ -1,8 +1,13 @@
-# React + Vite
+# 🛒 Online Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An e-commerce web application built with React.js and Tailwind CSS, using the FakeStore API for fetching product data.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- Display a list of products
+- View product details
+- Add products to cart
+- Responsive design with Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+- **Frontend:** React.js, Tailwind CSS, Vite
+- **API:** [FakeStore API](https://fakestoreapi.com/)
