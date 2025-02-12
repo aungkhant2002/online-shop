@@ -10,7 +10,7 @@ export default function CartSection() {
             <div className="w-full flex flex-col gap-5 h-full">
                 {carts.map((cart) => <Cart key={cart.id} cart={cart}/>)}
                 <div className="absolute bottom-14 left-0 w-full bg-white">
-                    <Container>
+                    <Container className={`px-5`}>
                         <div className="border-t border-black flex justify-end gap-20">
                             <div className="text-right mt-2">
                                 <p className="text-gray-500">Total ($)</p>

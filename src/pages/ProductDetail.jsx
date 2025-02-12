@@ -1,20 +1,22 @@
 import {useParams} from "react-router-dom";
-import products from "../data/products.js";
 import Container from "../components/Container.jsx";
 import Rating from "../components/Rating.jsx";
 import BreadCrumb from "../components/BreadCrumb.jsx";
+import useProductStore from "../store/useProductStore.js";
 
 export default function ProductDetail() {
     const {product_id} = useParams();
-    const currentProduct = products.find((product) => product.id == product_id);
+    const productId = Number(product_id);
+    const {products} = useProductStore();
+    const currentProduct = products.find((product) => product.id === productId);
     return (
         <Container>
             <div className="px-5 pb-5">
                 <BreadCrumb currentPageTitle="Product Detail"></BreadCrumb>
                 <div className="border border-black p-5 ">
-                    <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2">
                         <div className="col-span-1">
-                            <img src={currentProduct.image} className="w-3/4 block mx-auto" alt=""/>
+                            <img src={currentProduct.image} className="w-3/5 block md:mx-auto mb-5 md:mb-0" alt=""/>
                         </div>
                         <div className="col-span-1 flex flex-col items-start gap-5">
                             <h3 className="font-bold text-3xl">{currentProduct.title}</h3>

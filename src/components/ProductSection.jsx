@@ -1,8 +1,9 @@
 import ProductCard from "./ProductCard.jsx";
 import Container from "./Container.jsx";
-import products from "../data/products.js";
+import useProductStore from "../store/useProductStore.js";
 
 export default function ProductSection() {
+    const {products} = useProductStore();
     return (
         <div className="px-5 mb-5">
             <Container>
