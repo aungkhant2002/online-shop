@@ -1,4 +1,3 @@
-import products from "../data/products.js";
 import Cart from "./Cart.jsx";
 import Container from "./Container.jsx";
 import {Link} from "react-router-dom";
