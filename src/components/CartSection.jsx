@@ -1,12 +1,21 @@
 import Cart from "./Cart.jsx";
 import Container from "./Container.jsx";
 import {Link} from "react-router-dom";
-import carts from "../data/cart.js";
+import useCartStore from "../store/useCartStore.js";
+import useProductStore from "../store/useProductStore.js";
 
 export default function CartSection() {
+    const {products} = useProductStore();
+    const {carts} = useCartStore();
 
-    return (
-        <>
+    const total = carts.reduce((pv, cv) => {
+        const cost = cv.quantity * products.find(({id}) => id === cv.productId).price;
+        return pv + cost;
+    }, 0);
+
+    const tax = total * 0.05
+    const netTotal = total + tax;
+    return (<>
             <div className="w-full flex flex-col gap-5 h-full">
                 {carts.map((cart) => <Cart key={cart.id} cart={cart}/>)}
                 <div className="absolute bottom-14 left-0 w-full bg-white">
@@ -14,15 +23,15 @@ export default function CartSection() {
                         <div className="border-t border-black flex justify-end gap-20">
                             <div className="text-right mt-2">
                                 <p className="text-gray-500">Total ($)</p>
-                                <p className="text-xl font-bold">123</p>
+                                <p className="text-xl font-bold">{total.toFixed(2)}</p>
                             </div>
                             <div className="text-right mt-2">
                                 <p className="text-gray-500">Tax (10%)</p>
-                                <p className="text-xl font-bold">45</p>
+                                <p className="text-xl font-bold">{tax.toFixed(2)}</p>
                             </div>
                             <div className="text-right mt-2">
                                 <p className="text-gray-500">Net Total ($)</p>
-                                <p className="text-2xl font-bold">456</p>
+                                <p className="text-2xl font-bold">{netTotal.toFixed(2)}</p>
                             </div>
                         </div>
                         <div className="text-right mt-3">
@@ -31,6 +40,5 @@ export default function CartSection() {
                     </Container>
                 </div>
             </div>
-        </>
-    );
+        </>);
 }
