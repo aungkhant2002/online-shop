@@ -1,5 +1,7 @@
 import useProductStore from "../store/useProductStore.js";
 import useCartStore from "../store/useCartStore.js";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 // eslint-disable-next-line react/prop-types
 export default function Cart({cart: {id, productId, quantity}}) {
@@ -12,7 +14,20 @@ export default function Cart({cart: {id, productId, quantity}}) {
         if (quantity > 1) {
             decreaseQuantity(id);
         } else {
-            confirm("Are you sure to remove this item from My Cart?") && removeCart(id)
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    removeCart(id)
+                    toast.success("Item removed successfully")
+                }
+            });
         }
     }
     const product = products.find(el => el.id === productId);

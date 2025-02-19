@@ -1,6 +1,7 @@
 import Rating from "./Rating.jsx";
 import {useNavigate} from "react-router-dom";
 import useCartStore from "../store/useCartStore.js";
+import toast from "react-hot-toast";
 
 // eslint-disable-next-line react/prop-types
 export default function ProductCard({product: {id, title, price, image, rating: {rate}}}) {
@@ -22,6 +23,7 @@ export default function ProductCard({product: {id, title, price, image, rating: 
 
     const handleAddedBtn = (event) => {
         event.stopPropagation();
+        toast.error("Item is already added");
     }
 
     return (
