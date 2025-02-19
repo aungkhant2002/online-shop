@@ -20,9 +20,9 @@ export default function CartSection() {
         <div className="w-full flex flex-col gap-5 h-full">
             {carts.map((cart) => <Cart key={cart.id} cart={cart}/>)}
             {carts.length === 0 && (
-                <img src={emptyCartImg} className={`w-[200px] lg:w-[300px] block mx-auto mt-5`} alt="empty"/>
+                <img src={emptyCartImg} className={`h-[300px] md:h-[300px] xl:h-[420px]  block mx-auto mt-0 xl:mt-5`} alt="empty"/>
             )}
-            <div className="absolute bottom-14 left-0 w-full bg-white">
+            <div className="fixed bottom-0 mb-14 left-0 w-full bg-white">
                 <Container className={`px-5`}>
                     <div className="border-t border-black flex justify-end gap-20">
                         <div className="text-right mt-2">

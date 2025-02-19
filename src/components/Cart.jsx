@@ -37,7 +37,7 @@ export default function Cart({cart: {id, productId, quantity}}) {
                 </div>
             </div>
             <div className="col-span-1">
-                <p className="text-end ms-3 md:ms-0 text-xl font-bold">{cost}</p>
+                <p className="text-end ms-3 md:ms-0 text-xl font-bold">{cost.toFixed(2)}</p>
             </div>
         </div>
     )
