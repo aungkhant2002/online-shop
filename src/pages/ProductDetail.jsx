@@ -5,10 +5,9 @@ import BreadCrumb from "../components/BreadCrumb.jsx";
 import useProductStore from "../store/useProductStore.js";
 
 export default function ProductDetail() {
-    const {product_id} = useParams();
-    const productId = Number(product_id);
+    const {productSlug} = useParams();
     const {products} = useProductStore();
-    const currentProduct = products.find((product) => product.id === productId);
+    const currentProduct = products.find((product) => product.slug === productSlug);
     return (
         <Container>
             <div className="px-5 pb-5">

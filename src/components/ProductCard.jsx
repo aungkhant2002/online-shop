@@ -4,7 +4,7 @@ import useCartStore from "../store/useCartStore.js";
 import toast from "react-hot-toast";
 
 // eslint-disable-next-line react/prop-types
-export default function ProductCard({product: {id, title, price, image, rating: {rate}}}) {
+export default function ProductCard({product: {id, title, price, image, slug, rating: {rate}}}) {
     const navigate = useNavigate();
     const {carts, addCart} = useCartStore();
     const handleAddCartBtn = (event) => {
@@ -18,7 +18,7 @@ export default function ProductCard({product: {id, title, price, image, rating: 
     }
 
     const handleOpenDetail = () => {
-        navigate(`/product-detail/${id}`)
+        navigate(`/product-detail/${slug}`)
     }
 
     const handleAddedBtn = (event) => {
