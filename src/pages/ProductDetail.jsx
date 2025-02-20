@@ -3,11 +3,28 @@ import Container from "../components/Container.jsx";
 import Rating from "../components/Rating.jsx";
 import BreadCrumb from "../components/BreadCrumb.jsx";
 import useProductStore from "../store/useProductStore.js";
+import useCartStore from "../store/useCartStore.js";
+import toast from "react-hot-toast";
 
 export default function ProductDetail() {
+
     const {productSlug} = useParams();
     const {products} = useProductStore();
     const currentProduct = products.find((product) => product.slug === productSlug);
+    const {carts, addCart} = useCartStore();
+    const handleAddCartBtn = (event) => {
+        event.stopPropagation();
+        const newCart = {
+            id: Date.now(),
+            productId: currentProduct.id,
+            quantity: 1,
+        }
+        addCart(newCart);
+    }
+    const handleAddedBtn = (event) => {
+        event.stopPropagation();
+        toast.error("Item is already added");
+    }
     return (
         <Container>
             <div className="px-5 pb-5">
@@ -26,7 +43,9 @@ export default function ProductDetail() {
                                 <div>
                                     <p>Price : ( $ <span>{currentProduct.price}</span> )</p>
                                 </div>
-                                <button className="text-sm border border-black px-3 py-1">Add Cart</button>
+                                {carts.find((cart) => cart.productId === currentProduct.id) ? (
+                                    <button onClick={handleAddedBtn} className="text-sm border bg-black text-white px-3 py-1">Added</button>) : (
+                                    <button onClick={handleAddCartBtn} className="text-sm border border-black px-3 py-1">Add Cart</button>)}
                             </div>
                         </div>
                     </div>
