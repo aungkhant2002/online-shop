@@ -9,7 +9,11 @@ const MainLayout = () => {
             <Header/>
             <Outlet/>
             <Footer/>
-            <Toaster/>
+            <Toaster
+                position="bottom-right"
+                reverseOrder={false}
+                gutter={8}
+            />
         </>
     )
 }

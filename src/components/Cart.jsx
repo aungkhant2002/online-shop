@@ -20,7 +20,7 @@ export default function Cart({cart: {id, productId, quantity}}) {
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
+                cancelButtonColor: "#808080",
                 confirmButtonText: "Yes, delete it!"
             }).then((result) => {
                 if (result.isConfirmed) {
