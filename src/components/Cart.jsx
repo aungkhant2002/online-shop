@@ -38,7 +38,7 @@ export default function Cart({cart: {id, productId, quantity}}) {
                 <img src={product.image} className="h-16" alt=""/>
             </div>
             <div className="col-span-3">
-                <p className="text-xl font-bold mb-2">{product.title}</p>
+                <p className="text-lg font-bold mb-2 xl:text-xl">{product.title}</p>
                 <p className="text-gray-500">Price ( $ {product.price} )</p>
             </div>
             <div className="col-span-1">
@@ -52,7 +52,7 @@ export default function Cart({cart: {id, productId, quantity}}) {
                 </div>
             </div>
             <div className="col-span-1">
-                <p className="text-end ms-3 md:ms-0 text-xl font-bold">{cost.toFixed(2)}</p>
+                <p className="text-end ms-3 md:ms-0 text-lg font-bold lg:text-xl">{cost.toFixed(2)}</p>
             </div>
         </div>
     )
